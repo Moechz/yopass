@@ -1,0 +1,195 @@
+# ===========================================================================
+# Multilingual file for the TOS 7 Docker application "yopassdocker".
+# File name MUST be: <appid>.lang.  23-language superset (14 required by TOS).
+# The App Center picks the text matching the user's device language;
+# untranslated nodes fall back to English, which the official guide allows.
+# Fields: name (app title), auth (upstream author), descript (up to 512
+# chars), release_note, important (up to 512 chars).
+# Translations come from tosapp.json "translations"; run
+#   tosdocker lang <app>          to re-render this file
+#   tosdocker translate <app>     to see what still needs translating
+# ===========================================================================
+[en-us]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder."
+release_note = "1. First release."
+important    = "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it."
+
+[zh-cn]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "习惯打卡与连续天数统计，界面简洁。"
+release_note = "1. First release."
+important    = "首次使用请打开网页完成初始化。数据保存在 DockerAppData/beaverhabitsdocker，重启和升级不会丢失。容器以 uid 1000 运行，挂载目录需对该用户可读。需要 DockerEngine；Docker Hub 不可达时先配置镜像加速。卸载并删除数据前请备份。局域网内为 HTTP。"
+
+[zh-hk]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "习惯打卡与连续天数统计，界面简洁。"
+release_note = "1. First release."
+important    = "首次使用請開啟網頁完成初始化。資料保存在 DockerAppData/beaverhabitsdocker，重新啟動和升級不會遺失。容器以 uid 1000 運行，掛載目錄需對該使用者可讀。需要 DockerEngine；Docker Hub 不可達時先設定鏡像加速。解除安裝並刪除資料前請備份。區域網路內為 HTTP。"
+
+[fr-fr]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder."
+release_note = "1. First release."
+important    = "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it."
+
+[de-de]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder."
+release_note = "1. First release."
+important    = "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it."
+
+[it-it]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder."
+release_note = "1. First release."
+important    = "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it."
+
+[es-es]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder."
+release_note = "1. First release."
+important    = "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it."
+
+[hu-hu]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder."
+release_note = "1. First release."
+important    = "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it."
+
+[ja-jp]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder."
+release_note = "1. First release."
+important    = "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it."
+
+[ko-kr]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder."
+release_note = "1. First release."
+important    = "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it."
+
+[pl-pl]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder."
+release_note = "1. First release."
+important    = "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it."
+
+[ru-ru]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder."
+release_note = "1. First release."
+important    = "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it."
+
+[tr-tr]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder."
+release_note = "1. First release."
+important    = "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it."
+
+[pt-pt]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder."
+release_note = "1. First release."
+important    = "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it."
+
+[ar-sa]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder."
+release_note = "1. First release."
+important    = "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it."
+
+[cs-cz]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder."
+release_note = "1. First release."
+important    = "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it."
+
+[he-il]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder."
+release_note = "1. First release."
+important    = "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it."
+
+[id-id]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder."
+release_note = "1. First release."
+important    = "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it."
+
+[nb-no]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder."
+release_note = "1. First release."
+important    = "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it."
+
+[nl-nl]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder."
+release_note = "1. First release."
+important    = "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it."
+
+[sv-se]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder."
+release_note = "1. First release."
+important    = "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it."
+
+[th-th]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder."
+release_note = "1. First release."
+important    = "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it."
+
+[vi-vn]
+name         = "Yopass"
+auth         = "Yopass"
+version      = "@@VERSION@@"
+descript     = "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder."
+release_note = "1. First release."
+important    = "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it."
+
