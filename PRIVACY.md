@@ -113,8 +113,10 @@ No other third-party service is contacted by the application.
 Because the app has no accounts, there is no server-side identity to export or
 correct. You can control the data directly:
 
-- **Delete one secret:** use the delete action on the result page, or simply let
-  it expire; a one-time secret disappears after its first read.
+- **Delete one secret:** a one-time secret disappears after its first read;
+  otherwise let it expire. The Yopass web UI has no separate "delete this link"
+  button, so the NAS administrator removes a specific secret by clearing the
+  memcached entry / the corresponding `data/files` entry.
 - **Delete everything:** stop and remove the app, then remove
   `/Volume1/DockerAppData/yopassdocker/data` (choose "delete data" when
   uninstalling, or delete the folder manually). Restarting the containers clears
