@@ -1,16 +1,16 @@
 # ===========================================================================
 # Yopass for TerraMaster TOS 7 (multi-container Docker application)
 # ===========================================================================
-# App image  : jhaals/yopass:16.1.0 (Docker Hub)
+# App image  : jhaals/yopass:16.2.0 (Docker Hub)
 # Cache      : memcached:1.6-alpine (internal only)
 #
-# Yopass stores secrets in memcached with an expiry; the app wraps the secret
-# in an encrypted link. Only the app publishes a host port. Every container
-# runs as uid 1000.
+# Yopass stores encrypted secrets in memcached with an expiry; the app wraps
+# the secret in a link whose key lives in the URL fragment. Only the app
+# publishes a host port (8180). Every container runs as uid 1000.
 
 services:
   yopassdocker:
-    image: jhaals/yopass:16.1.0
+    image: jhaals/yopass:16.2.0
     container_name: yopassdocker
     restart: unless-stopped
     user: "1000:1000"
@@ -22,16 +22,16 @@ services:
       - "--file-store-path"
       - "/data/files"
     depends_on:
-      yopassdocker-memcached:
-        condition: service_healthy
+      - yopassdocker-memcached
     ports:
-      - "8142:1337"
+      - "8180:1337"
     environment:
       TZ: "Asia/Shanghai"
+      MEMCACHED: "yopassdocker-memcached:11211"
     volumes:
       - /Volume1/DockerAppData/yopassdocker/data:/data
     healthcheck:
-      test: ["CMD", "/yopass-server", "--help"]
+      test: ["CMD", "/yopass-server", "--health-check"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -54,5 +54,5 @@ services:
 # TOS App Center web metadata (must be the last block of the file):
 x-app-meta:
   web:
-    port: 8142
+    port: 8180
     protocol: http

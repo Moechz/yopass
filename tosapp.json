@@ -1,7 +1,7 @@
 {
   "app_id": "yopassdocker",
   "title": "Yopass",
-  "image": "jhaals/yopass:16.1.0",
+  "image": "jhaals/yopass:16.2.0",
   "repo_name": "yopass",
   "mode": "plain",
   "container_port": 1337,
@@ -20,62 +20,23 @@
   "auth": "Yopass",
   "upstream_url": "https://github.com/jhaals/yopass",
   "upstream_license": "Apache-2.0",
-  "descript": "Yopass shares secrets through one-time, expiring links: the secret is encrypted in the browser and the server only stores the ciphertext, backed by memcached. This package runs the official Docker Hub image with its own memcached container as non-root, and stores uploaded files in the application data folder.",
-  "release_note": "1. First release.",
-  "important": "Open the web UI on port 8142 and create a secret; the link can be viewed once and expires after the chosen time. The stack contains two containers (app, memcached) and keeps uploaded files under /Volume1/DockerAppData/yopassdocker/. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN; use HTTPS if exposed beyond it.",
-  "probe": {
-    "user_in_image": "nobody",
-    "entrypoint": null,
-    "cmd": [
-      "sh",
-      "start.sh",
-      "prd"
-    ],
-    "exposed_ports": [
-      8080
-    ],
-    "declared_volumes": [],
-    "image_healthcheck": [
-      "CMD-SHELL",
-      "python healthcheck.py"
-    ],
-    "digest": "daya0576/beaverhabits@sha256:6cd7e464207369785c88cfd59f99c6cc44ec57f3a8d90c3439908da42271d69f",
-    "architecture": "x86_64",
-    "platforms": [],
-    "http_client_in_image": "",
-    "trial_run": {
-      "ok": false,
-      "http_code": "",
-      "state": "exited",
-      "paths": [],
-      "host_port": 18000,
-      "log_tail": "21, in connect\n    await_only(connection),\n    ~~~~~~~~~~^^^^^^^^^^^^\n  File \"/opt/pysetup/.venv/lib/python3.14/site-packages/sqlalchemy/util/_concurrency_py3k.py\", line 132, in await_only\n    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501\n           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^\n  File \"/opt/pysetup/.venv/lib/python3.14/site-packages/sqlalchemy/util/_concurrency_py3k.py\", line 196, in greenlet_spawn\n    value = await result\n            ^^^^^^^^^^^^\n  File \"/opt/pysetup/.venv/lib/python3.14/site-packages/aiosqlite/core.py\", line 168, in _connect\n    self._connection = await future\n                       ^^^^^^^^^^^^\n  File \"/opt/pysetup/.venv/lib/python3.14/site-packages/aiosqlite/core.py\", line 63, in _connection_worker_thread\n    result = function()\n  File \"/opt/pysetup/.venv/lib/python3.14/site-packages/aiosqlite/core.py\", line 466, in connector\n    return sqlite3.connect(loc, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^\nsqlalchemy.exc.OperationalError: (sqlite3.OperationalError) unable to open database file\n(Background on this error at: https://sqlalche.me/e/20/e3q8)\n\n[2026-11-10 04:59:36 +0000] [11] [ERROR] Application startup failed. Exiting.\n[2026-11-10 04:59:36 +0000] [11] [INFO] Worker exiting (pid: 11)\n[2026-11-10 04:59:36 +0000] [9] [ERROR] Worker (pid:11) exited with code 3.\n[2026-11-10 04:59:36 +0000] [9] [ERROR] Shutting down: Master\n[2026-11-10 04:59:36 +0000] [9] [ERROR] Reason: Worker failed to boot.",
-      "files_in_mounts": ""
-    },
-    "docker_hub": {},
-    "github": {
-      "owner": "daya0576",
-      "repo": "beaverhabits",
-      "description": "A self-hosted habit tracking app without \"Goals\"",
-      "license": "BSD-3-Clause",
-      "homepage": "https://beaverhabits.com/demo"
-    }
-  },
+  "descript": "Yopass shares secrets through one-time, expiring links. The secret is encrypted in your browser and the decryption key stays in the link fragment, so the server stores only ciphertext: memcached while it lives, and disk for uploads. Choose a one-hour, one-day or one-week lifetime, make the link single-view, and optionally protect it with a password. This package runs the official Docker Hub image as a non-root container with its own memcached service; no account or telemetry.",
+  "release_note": "16.2.0-1 — Rectified per review comments (C3/C9/C10/T1). Upgraded to Yopass 16.2.0 to fix the high-severity Argon2 key-derivation issue (GHSA-4v9j-h5v5-4vjw); added PRIVACY.md and pointed help to it; rewrote descriptions to match the actual one-time/expiry/password features; completed the README repository layout; fixed the install/open failure by moving to port 8180 and hardening the compose.",
+  "important": "Open Yopass on port 8180, enter a secret or upload a file, choose a lifetime (1 hour/1 day/1 week), optionally enable one-time download or set a password. Two non-root containers (app + memcached) keep pending secrets in memcached and encrypted files under /Volume1/DockerAppData/yopassdocker/data; restarting clears pending secrets. Needs DockerEngine; use a registry mirror if Docker Hub is unreachable. Plain HTTP on the LAN; use HTTPS beyond it. Back up the data folder before uninstalling.",
   "healthcheck": [
     "CMD",
     "/yopass-server",
-    "--help"
+    "--health-check"
   ],
-  "entrypoint_file": "src/entrypoint.sh",
   "platform": "x86_64",
   "user": "1000:1000",
   "publisher": "Moechz",
   "compose_project": "yopassdocker",
   "github_repo": "yopass",
-  "upstream_version": "16.1.0",
+  "upstream_version": "16.2.0",
   "release_tag_prefix": "v",
-  "version": "16.1.0-1",
-  "help": "https://github.com/Moechz/yopass/issues",
+  "version": "16.2.0-1",
+  "help": "https://github.com/Moechz/yopass/blob/main/PRIVACY.md",
   "official": "https://github.com/jhaals/yopass",
   "license": "Apache-2.0",
   "docker_socket": false,
@@ -86,13 +47,13 @@
   ],
   "translations": {
     "zh-cn": {
-      "descript": "习惯打卡与连续天数统计，界面简洁。",
-      "important": "首次使用请打开网页完成初始化。数据保存在 DockerAppData/beaverhabitsdocker，重启和升级不会丢失。容器以 uid 1000 运行，挂载目录需对该用户可读。需要 DockerEngine；Docker Hub 不可达时先配置镜像加速。卸载并删除数据前请备份。局域网内为 HTTP。"
+      "descript": "Yopass 用于通过一次性、会过期的链接分享秘密。秘密在浏览器端加密，解密密钥只放在链接的片段（# 之后）里，不会发送给服务器；服务器只保存密文：未过期时存放在 memcached 中，上传的文件保存在数据目录。链接有效期可选 1 小时、1 天或 1 周，可设为仅可查看一次，也可选填密码保护。本应用以非 root 容器运行官方 Docker Hub 镜像，并自带 memcached 服务，不收集账户或遥测数据。",
+      "important": "在 8180 端口打开 Yopass，输入秘密或上传文件，选择有效期（1 小时/1 天/1 周），可勾选“一次性下载”或设置自定义密码，然后把生成的链接发给对方。应用包含两个非 root 容器（主程序 + memcached）；加密文件保存在 /Volume1/DockerAppData/yopassdocker/data，未过期的秘密保存在 memcached 内存中，重启应用会清空未读秘密。需要 DockerEngine；Docker Hub 不可达时先配置镜像加速。局域网内为 HTTP，暴露到公网请加 HTTPS。卸载并删除数据前请备份。"
     },
     "zh-hk": {
-      "descript": "习惯打卡与连续天数统计，界面简洁。",
-      "important": "首次使用請開啟網頁完成初始化。資料保存在 DockerAppData/beaverhabitsdocker，重新啟動和升級不會遺失。容器以 uid 1000 運行，掛載目錄需對該使用者可讀。需要 DockerEngine；Docker Hub 不可達時先設定鏡像加速。解除安裝並刪除資料前請備份。區域網路內為 HTTP。"
+      "descript": "Yopass 用於透過一次性、會過期的連結分享秘密。秘密在瀏覽器端加密，解密金鑰只放在連結的片段（# 之後）內，不會傳送給伺服器；伺服器只保存密文：未過期時存放在 memcached 中，上傳的檔案保存在資料目錄。連結有效期可選 1 小時、1 天或 1 週，可設為僅可查看一次，也可選填密碼保護。本應用以非 root 容器執行官方 Docker Hub 映像，並自帶 memcached 服務，不收集帳戶或遙測資料。",
+      "important": "在 8180 連接埠開啟 Yopass，輸入秘密或上傳檔案，選擇有效期（1 小時/1 天/1 週），可勾選「一次性下載」或設定自訂密碼，然後把產生的連結傳給對方。應用包含兩個非 root 容器（主程式 + memcached）；加密檔案保存在 /Volume1/DockerAppData/yopassdocker/data，未過期的秘密保存在 memcached 記憶體中，重新啟動應用會清空未讀秘密。需要 DockerEngine；Docker Hub 不可達時先設定鏡像加速。區域網路內為 HTTP，暴露到公網請加 HTTPS。解除安裝並刪除資料前請備份。"
     }
   },
-  "host_port": 8142
+  "host_port": 8180
 }
